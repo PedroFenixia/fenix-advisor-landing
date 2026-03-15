@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenix Advisor &mdash; Tu asesor regulatorio con IA &middot; Pr&oacute;ximamente</title>
+
+<meta name="description" content="Fenix Advisor te mantiene al día de los cambios regulatorios que afectan a tu negocio. Alertas automáticas, resúmenes con IA y recomendaciones de acción. Próximamente.">
+<meta name="author" content="FENIX IA SOLUTIONS">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#e11d48">
+<link rel="canonical" href="https://advisor.fenixia.tech/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://advisor.fenixia.tech/">
+<meta property="og:title" content="Fenix Advisor &mdash; Tu asesor regulatorio con IA">
+<meta property="og:description" content="Cambios regulatorios que afectan a tu negocio, resumidos y con recomendaciones de acción. Próximamente.">
+<meta property="og:site_name" content="Fenix Advisor">
+<meta property="og:locale" content="es_ES">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fenix Advisor &mdash; Tu asesor regulatorio con IA">
+<meta name="twitter:description" content="Alertas regulatorias con IA. Próximamente.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b0f14;--bg2:#12171f;--bg3:#1a2030;--card:#151c28;
+  --red:#e11d48;--red-bright:#f43f5e;--red-glow:rgba(225,29,72,.12);
+  --teal:#0d9488;
+  --silver:#c4c8c4;--silver-light:#e2e2e2;--white:#f0f2f0;
+  --gray:#7a8494;--gray2:#3d4a5c;--gray3:#2a3040;
+  --font:'Sora',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--silver);line-height:1.65;overflow-x:hidden;min-height:100vh}
+a{color:var(--red);text-decoration:none;transition:all .25s}
+a:hover{color:var(--red-bright)}
+::selection{background:var(--red);color:var(--bg)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(11,15,20,.9);backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(225,29,72,.06);transition:all .35s}
+nav.scrolled{padding:.65rem 2.5rem;box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:.7rem}
+.nav-logo img{height:44px;width:44px;object-fit:contain;mix-blend-mode:lighten}
+.nav-brand{font-weight:800;font-size:1.25rem;color:var(--silver-light);letter-spacing:1.5px}
+.nav-brand em{font-style:normal;color:var(--red)}
+.nav-links{display:flex;gap:2.2rem;align-items:center}
+.nav-links a{color:var(--gray);font-weight:500;font-size:.82rem;letter-spacing:.8px;text-transform:uppercase;transition:color .25s}
+.nav-links a:hover{color:var(--red-bright)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.7rem;border-radius:6px;font-weight:600;font-size:.88rem;transition:all .3s;cursor:pointer;border:none;font-family:var(--font);letter-spacing:.3px}
+.btn-primary{background:linear-gradient(135deg,var(--red),#be123c);color:#fff !important;box-shadow:0 2px 20px rgba(225,29,72,.2);position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-25deg);transition:left .6s ease}
+.btn-primary:hover::after{left:120%}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 35px rgba(225,29,72,.35)}
+.btn-ghost{background:rgba(225,29,72,.06);color:var(--red);border:1px solid rgba(225,29,72,.12)}
+.btn-ghost:hover{background:rgba(225,29,72,.12)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:7rem 2.5rem 5rem}
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3}
+.hero-bg .orb-1{width:600px;height:600px;background:rgba(225,29,72,.1);top:-20%;right:-10%;animation:float-orb 12s ease-in-out infinite}
+.hero-bg .orb-2{width:500px;height:500px;background:rgba(225,29,72,.06);bottom:-15%;left:-10%;animation:float-orb 15s ease-in-out infinite reverse}
+.hero-bg .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(225,29,72,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(225,29,72,.02) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,black 30%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 50%,black 30%,transparent 70%)}
+@keyframes float-orb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-20px) scale(1.05)}}
+
+.hero-content{text-align:center;max-width:800px;position:relative;z-index:1}
+.coming{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;padding:.4rem 1.2rem;border-radius:100px;background:rgba(225,29,72,.08);border:1px solid rgba(225,29,72,.15);animation:tag-glow 3s ease-in-out infinite}
+@keyframes tag-glow{0%,100%{box-shadow:0 0 8px rgba(225,29,72,.08)}50%{box-shadow:0 0 25px rgba(225,29,72,.2)}}
+.hero-content h1{font-size:3.4rem;font-weight:800;line-height:1.1;color:var(--white);margin-bottom:1.5rem;letter-spacing:-.8px}
+.hero-content h1 .hl{color:var(--red)}
+.hero-content .sub{font-size:1.15rem;color:var(--gray);line-height:1.75;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Dolor cards */
+.dolor-section{padding:5rem 2.5rem;background:var(--bg2)}
+.container{max-width:1100px;margin:0 auto}
+.center{text-align:center}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:.8rem;padding:.3rem .85rem;border-radius:100px;background:rgba(225,29,72,.06);border:1px solid rgba(225,29,72,.1)}
+.stitle{font-size:2.2rem;font-weight:800;color:var(--white);line-height:1.18;margin-bottom:1rem;letter-spacing:-.4px}
+.sdesc{color:var(--gray);font-size:1rem;max-width:560px;line-height:1.75}
+.center .sdesc{margin:0 auto}
+
+.dolor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.dolor-card{background:var(--card);border-radius:14px;padding:2rem 1.5rem;border:1px solid var(--gray3);position:relative;overflow:hidden;transition:all .4s}
+.dolor-card:hover{border-color:rgba(225,29,72,.25);transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,.25),0 0 30px rgba(225,29,72,.06)}
+.dolor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),var(--red-bright))}
+.dolor-ico{font-size:2rem;margin-bottom:.8rem}
+.dolor-title{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.dolor-desc{font-size:.85rem;color:var(--gray);line-height:1.6}
+
+/* Features */
+.features{padding:5rem 2.5rem}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.feat-card{background:var(--card);border-radius:12px;padding:1.8rem 1.5rem;border:1px solid var(--gray3);display:flex;gap:1.2rem;align-items:flex-start;transition:all .4s}
+.feat-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-3px)}
+.feat-ico{font-size:1.8rem;flex-shrink:0;margin-top:.2rem}
+.feat-name{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.feat-desc{font-size:.82rem;color:var(--gray);line-height:1.55}
+
+/* Who */
+.who-section{padding:5rem 2.5rem;background:var(--bg2)}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.who-card{background:var(--card);border-radius:10px;padding:1.5rem 1.2rem;border:1px solid var(--gray3);text-align:center;transition:all .3s}
+.who-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-3px)}
+.who-ico{font-size:2rem;margin-bottom:.5rem}
+.who-name{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.25rem}
+.who-desc{font-size:.75rem;color:var(--gray);line-height:1.5}
+
+/* CTA */
+.cta-section{padding:5rem 2.5rem;text-align:center}
+.cta-box{max-width:600px;margin:0 auto;background:var(--card);border-radius:18px;padding:3rem 2.5rem;border:1px solid rgba(225,29,72,.15);position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--red-bright),var(--red));background-size:200% 100%;animation:gradient-slide 3s linear infinite}
+@keyframes gradient-slide{0%{background-position:0% 0}100%{background-position:200% 0}}
+.cta-box h2{font-size:1.6rem;font-weight:800;color:var(--white);margin-bottom:.6rem}
+.cta-box p{color:var(--gray);font-size:.95rem;margin-bottom:2rem;line-height:1.6}
+.form-row{display:flex;gap:.8rem;margin-bottom:.8rem}
+input{padding:.85rem 1.2rem;border-radius:8px;border:1px solid var(--gray3);background:var(--bg3);color:var(--white);font-family:var(--font);font-size:.9rem;outline:none;transition:border .25s;width:100%}
+input:focus{border-color:var(--red)}
+input::placeholder{color:var(--gray)}
+.form-note{font-size:.72rem;color:var(--gray);margin-top:.6rem}
+
+/* Ecosystem */
+.eco-strip{padding:3rem 2.5rem;background:var(--bg2);border-top:1px solid var(--gray3)}
+.eco-inner{max-width:1100px;margin:0 auto;text-align:center}
+.eco-label{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem}
+.eco-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.eco-links a{color:var(--gray);font-size:.82rem;font-weight:500;transition:color .25s}
+.eco-links a:hover{color:var(--red-bright)}
+.eco-links a.active{color:var(--red);font-weight:700}
+
+/* Footer */
+footer{background:var(--bg);border-top:1px solid var(--gray3);padding:2rem 2.5rem 1.2rem}
+.ft-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.ft-brand{display:flex;align-items:center;gap:.6rem}
+.ft-brand img{height:30px;width:30px;object-fit:contain;mix-blend-mode:lighten}
+.ft-links{display:flex;gap:2rem}
+.ft-links a{color:var(--gray);font-size:.78rem}
+.ft-links a:hover{color:var(--red)}
+.ft-legal{max-width:1100px;margin:.8rem auto 0;padding-top:.8rem;border-top:1px solid rgba(61,74,92,.15);display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.ft-legal a{color:var(--gray);font-size:.72rem}
+.ft-copy{color:var(--gray);font-size:.72rem;text-align:center;margin-top:.8rem;max-width:1100px;margin-left:auto;margin-right:auto}
+
+/* Animations */
+.fi{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.16,1,.3,1)}
+.fi.vis{opacity:1;transform:translateY(0)}
+.s1{transition-delay:.1s}.s2{transition-delay:.2s}.s3{transition-delay:.3s}.s4{transition-delay:.4s}.s5{transition-delay:.5s}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-content h1{font-size:2.4rem}
+  .dolor-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .who-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .form-row{flex-direction:column}
+}
+@media(max-width:600px){
+  nav{padding:1rem 1.5rem}
+  .hero{padding:5rem 1.5rem 3rem;min-height:auto}
+  .hero-content h1{font-size:1.8rem}
+  .hero-content .sub{font-size:1rem}
+  .stitle{font-size:1.6rem}
+  section,.dolor-section,.features,.who-section,.cta-section{padding:3rem 1.5rem}
+  .who-grid{grid-template-columns:1fr}
+  .eco-links{flex-direction:column;gap:.8rem}
+  .ft-inner{flex-direction:column;text-align:center}
+  .ft-links{flex-direction:column;gap:.8rem}
+  .btn{min-height:44px;padding:1rem 1.5rem}
+  input{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <img src="logo.png" alt="Fenix Advisor Logo">
+    <span class="nav-brand">FENIX <em>Advisor</em></span>
+  </div>
+  <div class="nav-links">
+    <a href="#problema">El problema</a>
+    <a href="#solucion">Soluci&oacute;n</a>
+    <a href="#para-quien">Sectores</a>
+    <a href="https://fenixia.tech" class="btn btn-ghost" target="_blank" rel="noopener">Ecosistema Fenixia</a>
+    <a href="#early" class="btn btn-primary">Acceso anticipado</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="hero-content fi">
+    <div class="coming">Pr&oacute;ximamente</div>
+    <h1>Cambia la normativa.<br>Tu empresa se entera <span class="hl">tarde</span></h1>
+    <p class="sub">Fenix Advisor vigila los cambios regulatorios que afectan a tu sector, los resume con IA y te dice exactamente qu&eacute; tienes que hacer. Antes de que sea un problema.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="#early" class="btn btn-primary">Quiero acceso anticipado &rarr;</a>
+      <a href="https://fenixia.tech" class="btn btn-ghost" target="_blank" rel="noopener">Ver Ecosistema Fenixia</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="dolor-section" id="problema">
+  <div class="container center">
+    <span class="tag">El problema</span>
+    <h2 class="stitle">Cada d&iacute;a se publican cambios que afectan a tu negocio.<br>&iquest;Los est&aacute;s leyendo?</h2>
+    <p class="sdesc">BOE, DOUE, boletines auton&oacute;micos, normativa sectorial... Es imposible estar al d&iacute;a manualmente</p>
+    <div class="dolor-grid">
+      <div class="dolor-card fi">
+        <div class="dolor-ico">&#9888;&#65039;</div>
+        <div class="dolor-title">Multas por incumplimiento</div>
+        <div class="dolor-desc">No te enteraste del cambio normativo. La inspecci&oacute;n llega antes que la informaci&oacute;n. El coste medio de una sanci&oacute;n por incumplimiento supera los 30.000&euro;.</div>
+      </div>
+      <div class="dolor-card fi s1">
+        <div class="dolor-ico">&#128240;</div>
+        <div class="dolor-title">Sobrecarga informativa</div>
+        <div class="dolor-desc">Miles de p&aacute;ginas de BOE, DOUE y boletines auton&oacute;micos cada semana. Tu equipo legal no puede leerlo todo. Y cuando puede, llega tarde.</div>
+      </div>
+      <div class="dolor-card fi s2">
+        <div class="dolor-ico">&#128337;</div>
+        <div class="dolor-title">Reacci&oacute;n en vez de prevenci&oacute;n</div>
+        <div class="dolor-desc">Te enteras de los cambios cuando ya est&aacute;n en vigor. Adaptar procesos con prisa cuesta 10x m&aacute;s que hacerlo con tiempo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="solucion">
+  <div class="container center">
+    <span class="tag">La soluci&oacute;n</span>
+    <h2 class="stitle">Tu asesor regulatorio con IA.<br>Siempre despierto, siempre al d&iacute;a</h2>
+    <p class="sdesc">Fenix Advisor monitoriza, analiza y te recomienda acci&oacute;n. T&uacute; solo decides</p>
+    <div class="feat-grid">
+      <div class="feat-card fi">
+        <div class="feat-ico">&#128269;</div>
+        <div>
+          <div class="feat-name">Vigilancia continua</div>
+          <div class="feat-desc">Monitoriza BOE, DOUE, boletines auton&oacute;micos y normativa sectorial en tiempo real. Configura tus fuentes y sectores de inter&eacute;s.</div>
+        </div>
+      </div>
+      <div class="feat-card fi s1">
+        <div class="feat-ico">&#129504;</div>
+        <div>
+          <div class="feat-name">Res&uacute;menes con IA</div>
+          <div class="feat-desc">Cada cambio normativo resumido en lenguaje claro: qu&eacute; cambia, a qui&eacute;n afecta, desde cu&aacute;ndo y qu&eacute; hacer. Sin jerga legal.</div>
+        </div>
+      </div>
+      <div class="feat-card fi s2">
+        <div class="feat-ico">&#128276;</div>
+        <div>
+          <div class="feat-name">Alertas inteligentes</div>
+          <div class="feat-desc">Solo te avisa cuando algo te afecta. Filtrado por sector, comunidad aut&oacute;noma, tipo de empresa y &aacute;rea funcional. Cero ruido.</div>
+        </div>
+      </div>
+      <div class="feat-card fi s3">
+        <div class="feat-ico">&#128203;</div>
+        <div>
+          <div class="feat-name">Plan de acci&oacute;n</div>
+          <div class="feat-desc">No solo te dice qu&eacute; ha cambiado. Te dice exactamente qu&eacute; pasos seguir para cumplir. Con plazos, responsables y checklist.</div>
+        </div>
+      </div>
+      <div class="feat-card fi s4">
+        <div class="feat-ico">&#128197;</div>
+        <div>
+          <div class="feat-name">Calendario regulatorio</div>
+          <div class="feat-desc">Visualiza todos los plazos de cumplimiento en un calendario. Nunca m&aacute;s &ldquo;se nos pas&oacute; la fecha&rdquo;.</div>
+        </div>
+      </div>
+      <div class="feat-card fi s5">
+        <div class="feat-ico">&#128200;</div>
+        <div>
+          <div class="feat-name">Informe de cumplimiento</div>
+          <div class="feat-desc">Genera informes autom&aacute;ticos del estado de cumplimiento para direcci&oacute;n, auditor&iacute;a o la inspecci&oacute;n. Siempre preparado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section class="who-section" id="para-quien">
+  <div class="container center">
+    <span class="tag">Para qui&eacute;n</span>
+    <h2 class="stitle">&iquest;Te suena alguno de estos escenarios?</h2>
+    <div class="who-grid">
+      <div class="who-card fi">
+        <div class="who-ico">&#127970;</div>
+        <div class="who-name">PYMEs</div>
+        <div class="who-desc">Sin departamento legal propio. Necesitas saber qu&eacute; te afecta sin leer 200 p&aacute;ginas de BOE.</div>
+      </div>
+      <div class="who-card fi s1">
+        <div class="who-ico">&#128188;</div>
+        <div class="who-name">Asesor&iacute;as y despachos</div>
+        <div class="who-desc">Gestionas el cumplimiento de decenas de clientes. Necesitas automatizar la vigilancia.</div>
+      </div>
+      <div class="who-card fi s2">
+        <div class="who-ico">&#127975;</div>
+        <div class="who-name">Industria y construcci&oacute;n</div>
+        <div class="who-desc">Normativa t&eacute;cnica, medioambiental y laboral en constante cambio. Un error cuesta paradas y sanciones.</div>
+      </div>
+      <div class="who-card fi s3">
+        <div class="who-ico">&#127973;</div>
+        <div class="who-name">Hosteler&iacute;a y comercio</div>
+        <div class="who-desc">Licencias, sanidad, accesibilidad, protecci&oacute;n de datos... Regulaci&oacute;n cruzada que cambia por comunidad.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA EARLY ACCESS -->
+<section class="cta-section" id="early">
+  <div class="cta-box fi">
+    <div class="coming" style="margin-bottom:1rem">Pr&oacute;ximamente</div>
+    <h2>Acceso anticipado</h2>
+    <p>S&eacute; de los primeros en probar Fenix Advisor. Sin compromiso, sin coste. Te avisamos cuando est&eacute; listo.</p>
+    <form id="form" onsubmit="return handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="tu@empresa.com" required>
+      </div>
+      <div class="form-row">
+        <input type="text" name="company" placeholder="Nombre de tu empresa">
+        <input type="text" name="sector" placeholder="Sector (ej: construcci&oacute;n, hosteler&iacute;a...)">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:.5rem">Quiero acceso anticipado &rarr;</button>
+      <div class="form-note">Sin spam. Solo te avisaremos cuando Fenix Advisor est&eacute; disponible.</div>
+    </form>
+    <div id="ok" style="display:none;padding:1.5rem;background:rgba(225,29,72,.06);border-radius:10px;border:1px solid rgba(225,29,72,.15);margin-top:1rem">
+      <p style="font-size:1.1rem;font-weight:700;color:var(--red);margin-bottom:.3rem">&#10003; Apuntado</p>
+      <p style="color:var(--silver);font-size:.9rem">Te avisaremos en cuanto Fenix Advisor est&eacute; disponible</p>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<div class="eco-strip">
+  <div class="eco-inner">
+    <div class="eco-label">Ecosistema Fenixia</div>
+    <div class="eco-links">
+      <a href="https://fenixia.tech" target="_blank" rel="noopener">Fenix IA</a>
+      <a href="https://360.fenixia.tech" target="_blank" rel="noopener">Fenix 360</a>
+      <a href="https://hr.fenixia.tech" target="_blank" rel="noopener">Fenix HR</a>
+      <a href="https://prospector.fenixia.tech" target="_blank" rel="noopener">Fenix Prospector</a>
+      <a href="https://guardian.fenixia.tech" target="_blank" rel="noopener">Fenix Guardian</a>
+      <a href="https://portfolio.fenixia.tech" target="_blank" rel="noopener">Fenix Portfolio</a>
+      <a href="https://advisor.fenixia.tech" class="active">Fenix Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <img src="logo.png" alt="Fenix Advisor Logo">
+      <span style="font-weight:700;color:#fff;font-size:.95rem">FENIX <span style="color:var(--red)">Advisor</span></span>
+    </div>
+    <div class="ft-links">
+      <a href="#problema">El problema</a>
+      <a href="#solucion">Soluci&oacute;n</a>
+      <a href="#early">Acceso anticipado</a>
+    </div>
+  </div>
+  <div class="ft-legal">
+    <a href="https://fenixia.tech/terminos">T&eacute;rminos</a>
+    <a href="https://fenixia.tech/privacidad">Privacidad</a>
+    <a href="https://fenixia.tech/cookies">Cookies</a>
+  </div>
+  <div class="ft-copy">&copy; 2026 FENIX IA SOLUTIONS &mdash; <a href="https://fenixia.tech" style="color:var(--red)" target="_blank" rel="noopener">fenixia.tech</a> &mdash; Todos los derechos reservados</div>
+</footer>
+
+<script>
+const n=document.getElementById('navbar');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>50));
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(e=>obs.observe(e));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}));
+
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('form').style.display='none';
+  document.getElementById('ok').style.display='block';
+  return false;
+}
+</script>
+</body>
+</html>
