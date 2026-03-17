@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenix Advisor &mdash; Presentaci&oacute;n</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#1e2633;--bg2:#243040;--bg3:#2c394d;--card:#253345;
+  --red:#e11d48;--red-bright:#f43f5e;--red-glow:rgba(225,29,72,.12);
+  --teal:#14b8a6;--teal-bright:#2dd4bf;
+  --silver:#c4c8c4;--silver-light:#e2e2e2;--white:#f0f2f0;
+  --gray:#7a8494;--gray2:#3d4a5c;--gray3:#2a3040;
+  --purple:#8b7cc8;--green:#5cb88a;--orange:#d4944a;--cherry:#c85454;
+  --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--silver);line-height:1.65;overflow-x:hidden}
+a{color:var(--red);text-decoration:none;transition:all .25s}
+a:hover{color:var(--red-bright)}
+::selection{background:var(--red);color:var(--bg)}
+
+/* -- SLIDES -- */
+.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 80px;scroll-snap-align:start;position:relative;overflow:hidden}
+.slide::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(225,29,72,.04) 0%,transparent 50%),radial-gradient(circle at 70% 80%,rgba(139,124,200,.03) 0%,transparent 50%);pointer-events:none}
+.slide-content{max-width:1180px;width:100%;position:relative;z-index:1}
+
+/* -- NAV DOTS -- */
+.nav{position:fixed;right:30px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
+.nav-dot:hover,.nav-dot.active{background:var(--red);border-color:var(--red);transform:scale(1.3)}
+.slide-counter{position:fixed;bottom:30px;right:30px;font-size:13px;color:var(--gray);z-index:100;font-weight:500;font-family:var(--mono)}
+.keyboard-hint{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);color:var(--gray);font-size:.75rem;z-index:100;opacity:.5;display:flex;align-items:center;gap:8px}
+.key{display:inline-block;padding:2px 8px;background:rgba(255,255,255,.06);border-radius:4px;font-size:.7rem;font-family:var(--mono);border:1px solid var(--gray3)}
+
+/* -- TYPOGRAPHY -- */
+h1{font-size:3.8rem;font-weight:800;line-height:1.1;letter-spacing:-.8px;color:var(--white)}
+h2{font-size:2.5rem;font-weight:800;line-height:1.18;letter-spacing:-.4px;margin-bottom:36px;color:var(--white)}
+h3{font-size:1.3rem;font-weight:700;margin-bottom:12px;color:var(--white)}
+p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
+.hl{color:var(--red-bright)}
+.hl-teal{color:var(--teal-bright)}
+.hl-purple{color:var(--purple)}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:.8rem;padding:.3rem .85rem;border-radius:100px;background:rgba(225,29,72,.06);border:1px solid rgba(225,29,72,.1)}
+.subtitle{font-size:1.2rem;color:var(--gray);font-weight:400;margin-top:16px;max-width:680px}
+
+/* -- GRIDS -- */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+
+/* -- CARDS -- */
+.card{background:var(--card);border-radius:14px;padding:2rem 1.6rem;border:1px solid var(--gray3);position:relative;overflow:hidden;transition:all .4s ease}
+.card:hover{border-color:rgba(225,29,72,.25);transform:translateY(-3px);box-shadow:0 16px 50px rgba(0,0,0,.25)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.card:nth-child(1)::before{background:linear-gradient(90deg,var(--red),var(--red-bright))}
+.card:nth-child(2)::before{background:linear-gradient(90deg,var(--teal),var(--teal-bright))}
+.card:nth-child(3)::before{background:linear-gradient(90deg,var(--purple),#a99ad8)}
+.card:nth-child(4)::before{background:linear-gradient(90deg,var(--orange),#e8a96a)}
+.card:nth-child(5)::before{background:linear-gradient(90deg,var(--green),#78d4a6)}
+.card:nth-child(6)::before{background:linear-gradient(90deg,var(--cherry),#e87878)}
+.card-icon{font-size:2rem;margin-bottom:.7rem}
+.card h3{font-size:1.1rem;margin-bottom:.35rem}
+.card p{font-size:.85rem;line-height:1.6}
+
+/* -- STATS -- */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.stat{text-align:center;padding:26px;background:var(--card);border-radius:14px;border:1px solid var(--gray3)}
+.stat-number{font-size:2.6rem;font-weight:800;line-height:1;margin-bottom:6px;font-family:var(--mono);color:var(--red)}
+.stat-label{color:var(--gray);font-size:.8rem;font-weight:500}
+
+/* -- PROBLEM LIST -- */
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:18px}
+.problem-list li{display:flex;align-items:flex-start;gap:14px;font-size:1rem;color:var(--gray);line-height:1.6}
+.problem-list li .icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+
+/* -- FEATURE LIST -- */
+.feature-list{list-style:none;margin-top:14px}
+.feature-list li{padding:7px 0;font-size:.88rem;color:var(--gray);display:flex;align-items:center;gap:10px}
+.feature-list li::before{content:'\2713';color:var(--teal);font-weight:700;font-size:1rem}
+
+/* -- TECH CARDS -- */
+.tech-card{background:var(--card);border-radius:10px;padding:1.4rem 1rem;text-align:center;border:1px solid var(--gray3);transition:all .3s}
+.tech-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-3px)}
+.tech-icon{font-size:2rem;margin-bottom:.5rem}
+.tech-card h3{font-size:.88rem;margin-bottom:4px}
+.tech-card p{font-size:.75rem}
+
+/* -- ROLE CARDS -- */
+.role-card{background:var(--card);border-radius:12px;padding:18px;display:flex;align-items:center;gap:14px;border:1px solid var(--gray3);transition:all .3s}
+.role-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-2px)}
+.role-icon{font-size:1.8rem;flex-shrink:0}
+.role-card h3{font-size:.9rem;margin-bottom:3px}
+.role-card p{font-size:.78rem;margin:0}
+
+/* -- STEP CARDS -- */
+.step-card{background:var(--card);border-radius:14px;padding:2rem 1.6rem;border:1px solid var(--gray3);position:relative;overflow:hidden;transition:all .4s ease}
+.step-card:hover{border-color:rgba(225,29,72,.25);transform:translateY(-3px);box-shadow:0 16px 50px rgba(0,0,0,.25)}
+.step-number{font-size:3rem;font-weight:800;color:var(--red);opacity:.3;font-family:var(--mono);line-height:1;margin-bottom:.5rem}
+.step-card h3{font-size:1.1rem;margin-bottom:.35rem}
+.step-card p{font-size:.85rem;line-height:1.6}
+
+/* -- CTA -- */
+.cta-slide{text-align:center}
+.cta-slide h1{margin-bottom:16px}
+.cta-button{display:inline-flex;align-items:center;gap:.5rem;margin-top:32px;padding:16px 40px;background:var(--red);color:#fff;border-radius:8px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:var(--font);box-shadow:0 0 25px rgba(225,29,72,.2)}
+.cta-button:hover{background:var(--red-bright);transform:translateY(-2px);box-shadow:0 8px 35px rgba(225,29,72,.3);color:#fff}
+.contact-info{margin-top:32px;color:var(--gray);font-size:.9rem}
+.contact-info a{color:var(--red);text-decoration:none}
+
+/* -- BADGE -- */
+.badge{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red-bright);padding:.4rem 1.2rem;border-radius:100px;background:rgba(225,29,72,.08);border:1px solid rgba(225,29,72,.2);margin-bottom:1.2rem}
+
+/* -- LOGO -- */
+.logo{font-weight:800;font-size:1.6rem;color:var(--silver-light);letter-spacing:1.5px}
+.logo em{font-style:normal;color:var(--red)}
+
+/* -- DECORATIVE -- */
+.glow-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:.35}
+
+/* -- ANIMATIONS -- */
+.fi{opacity:0;transform:translateY(24px);transition:all .55s ease-out}
+.fi.vis{opacity:1;transform:translateY(0)}
+.s1{transition-delay:.08s}.s2{transition-delay:.16s}.s3{transition-delay:.24s}
+
+/* -- HELPERS -- */
+.text-center{text-align:center}
+.mt-20{margin-top:20px}
+.mb-20{margin-bottom:20px}
+
+/* -- PRINT -- */
+@media print{
+  .slide{page-break-after:always;min-height:auto;padding:40px}
+  .nav,.slide-counter,.keyboard-hint{display:none}
+}
+
+/* -- RESPONSIVE -- */
+@media(max-width:900px){
+  .slide{padding:40px 24px}
+  h1{font-size:2.4rem}
+  h2{font-size:1.9rem}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+}
+@media(max-width:600px){
+  .slide{padding:32px 16px}
+  h1{font-size:1.8rem}
+  .stat-grid{grid-template-columns:1fr}
+  .keyboard-hint{display:none}
+  .role-card{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation dots -->
+<nav class="nav" id="nav"></nav>
+<div class="slide-counter" id="slideCounter">1 / 8</div>
+<div class="keyboard-hint">Navega con <span class="key">&uarr;</span> <span class="key">&darr;</span> o scroll</div>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 1: PORTADA -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-1">
+  <div class="glow-orb" style="width:600px;height:600px;background:rgba(225,29,72,.12);top:-200px;right:-200px"></div>
+  <div class="glow-orb" style="width:400px;height:400px;background:rgba(139,124,200,.08);bottom:-100px;left:-100px"></div>
+  <div class="slide-content text-center">
+    <div class="logo mb-20">Fenix <em>Advisor</em></div>
+    <div class="badge">Pr&oacute;ximamente</div>
+    <h1>Tu asesor regulatorio<br>con <span class="hl">IA</span></h1>
+    <p class="subtitle" style="margin:16px auto 0">Vigila cambios normativos, resume con IA<br>y te dice qu&eacute; hacer.</p>
+    <div style="margin-top:44px;color:var(--gray);font-size:.85rem;font-family:var(--mono)">FENIXIA SOLUTIONS S.L. &mdash; 2026</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 2: EL PROBLEMA -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-content">
+    <span class="tag">El Problema</span>
+    <h2>Cada d&iacute;a se publican cambios que afectan a tu negocio.<br><span class="hl">&iquest;Los est&aacute;s leyendo?</span></h2>
+    <div class="grid-2" style="align-items:start">
+      <ul class="problem-list">
+        <li><span class="icon">&#9888;&#65039;</span><div><strong style="color:var(--white)">Multas por incumplimiento</strong> &mdash; El coste medio de una sanci&oacute;n supera los 30.000&euro;. Y muchas veces se pod&iacute;a haber evitado.</div></li>
+        <li><span class="icon">&#128200;</span><div><strong style="color:var(--white)">Sobrecarga informativa</strong> &mdash; Miles de p&aacute;ginas entre BOE y DOUE cada semana. Nadie tiene tiempo de leerlo todo.</div></li>
+        <li><span class="icon">&#128683;</span><div><strong style="color:var(--white)">Reacci&oacute;n en vez de prevenci&oacute;n</strong> &mdash; Adaptar con prisa cuesta 10 veces m&aacute;s que anticiparse. La mayor&iacute;a de empresas se enteran tarde.</div></li>
+      </ul>
+      <div class="stat-grid" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="stat"><div class="stat-number">30K&euro;</div><div class="stat-label">Sanci&oacute;n media</div></div>
+        <div class="stat"><div class="stat-number">1.500+</div><div class="stat-label">P&aacute;ginas BOE/semana</div></div>
+        <div class="stat"><div class="stat-number">10x</div><div class="stat-label">Coste reactivo vs preventivo</div></div>
+        <div class="stat"><div class="stat-number">78%</div><div class="stat-label">Empresas enteradas tarde</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 3: LA SOLUCIÓN -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-content text-center">
+    <span class="tag">La Soluci&oacute;n</span>
+    <h2>Tu asesor regulatorio con IA.<br><span class="hl">Siempre despierto, siempre al d&iacute;a.</span></h2>
+    <p style="max-width:680px;margin:0 auto 44px;font-size:1.05rem">Fenix Advisor vigila la normativa por ti, resume los cambios en lenguaje claro y te dice exactamente qu&eacute; tienes que hacer para cumplir.</p>
+    <div class="stat-grid" style="margin-top:0">
+      <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Vigilancia continua</div></div>
+      <div class="stat"><div class="stat-number" style="color:var(--purple)">IA</div><div class="stat-label">Res&uacute;menes autom&aacute;ticos</div></div>
+      <div class="stat"><div class="stat-number" style="color:var(--teal)">0</div><div class="stat-label">Jerga legal</div></div>
+      <div class="stat"><div class="stat-number">&#127919;</div><div class="stat-label">Alertas personalizadas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 4: FUNCIONALIDADES -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-content">
+    <span class="tag">Funcionalidades</span>
+    <h2>Todo lo que necesitas para<br><span class="hl">cumplir sin esfuerzo</span></h2>
+    <div class="grid-3">
+      <div class="card fi"><div class="card-icon">&#128065;</div><h3>Vigilancia continua</h3><p>BOE, DOUE, boletines auton&oacute;micos y normativa sectorial. Monitorizado 24/7 sin que muevas un dedo.</p></div>
+      <div class="card fi s1"><div class="card-icon">&#129302;</div><h3>Res&uacute;menes con IA</h3><p>Lenguaje claro: qu&eacute; cambia, a qui&eacute;n afecta, desde cu&aacute;ndo. Sin jerga legal, sin tecnicismos innecesarios.</p></div>
+      <div class="card fi s2"><div class="card-icon">&#128276;</div><h3>Alertas inteligentes</h3><p>Filtrado por sector, comunidad aut&oacute;noma y tipo de empresa. Solo lo que te afecta. Cero ruido.</p></div>
+      <div class="card fi"><div class="card-icon">&#9989;</div><h3>Plan de acci&oacute;n</h3><p>Pasos concretos para cumplir con plazos, responsables y checklist. De la norma a la acci&oacute;n en minutos.</p></div>
+      <div class="card fi s1"><div class="card-icon">&#128197;</div><h3>Calendario regulatorio</h3><p>Plazos de cumplimiento visualizados en un calendario. Nunca m&aacute;s te pillar&aacute; una fecha l&iacute;mite por sorpresa.</p></div>
+      <div class="card fi s2"><div class="card-icon">&#128203;</div><h3>Informe de cumplimiento</h3><p>Reportes listos para direcci&oacute;n, auditor&iacute;a o inspecci&oacute;n. Demuestra que cumples con un clic.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 5: PARA QUIÉN -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-content">
+    <span class="tag">Para Qui&eacute;n</span>
+    <h2>Dise&ntilde;ado para quienes<br><span class="hl">no pueden permitirse fallar</span></h2>
+    <p style="margin-bottom:32px">Empresas y profesionales que necesitan estar al d&iacute;a sin dedicar horas a leer boletines.</p>
+    <div class="grid-2" style="gap:16px">
+      <div class="role-card fi"><span class="role-icon">&#127970;</span><div><h3>PYMEs</h3><p>Sin departamento legal propio. Necesitan cumplir con la normativa sin contratar a un abogado a tiempo completo.</p></div></div>
+      <div class="role-card fi s1"><span class="role-icon">&#128188;</span><div><h3>Asesor&iacute;as y despachos</h3><p>Gestionan el cumplimiento de decenas de clientes. Multiplicar la capacidad sin multiplicar el equipo.</p></div></div>
+      <div class="role-card fi"><span class="role-icon">&#127981;</span><div><h3>Industria y construcci&oacute;n</h3><p>Normativa t&eacute;cnica, medioambiental y laboral en constante cambio. Un error puede parar una obra.</p></div></div>
+      <div class="role-card fi s1"><span class="role-icon">&#127860;</span><div><h3>Hosteler&iacute;a y comercio</h3><p>Regulaci&oacute;n cruzada que var&iacute;a por comunidad aut&oacute;noma. Licencias, sanidad, horarios, accesibilidad.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 6: CÓMO FUNCIONA -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-content text-center">
+    <span class="tag">C&oacute;mo Funciona</span>
+    <h2>De la normativa a la acci&oacute;n<br><span class="hl">en 4 pasos</span></h2>
+    <div class="grid-4">
+      <div class="step-card fi"><div class="step-number">01</div><h3>Configura tu perfil</h3><p>Sector, comunidad aut&oacute;noma y &aacute;reas de inter&eacute;s. En 2 minutos est&aacute;s listo.</p></div>
+      <div class="step-card fi s1"><div class="step-number">02</div><h3>Vigilancia autom&aacute;tica</h3><p>BOE, DOUE y boletines auton&oacute;micos rastreados cada d&iacute;a. Sin intervenci&oacute;n manual.</p></div>
+      <div class="step-card fi s2"><div class="step-number">03</div><h3>IA resume y clasifica</h3><p>Res&uacute;menes claros con impacto, urgencia y a qui&eacute;n afecta. Solo lo relevante.</p></div>
+      <div class="step-card fi s3"><div class="step-number">04</div><h3>Act&uacute;a con plan</h3><p>Checklist de cumplimiento con plazos, responsables y seguimiento autom&aacute;tico.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 7: FUENTES -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-7">
+  <div class="slide-content text-center">
+    <span class="tag">Fuentes</span>
+    <h2>Cobertura normativa<br><span class="hl">completa y actualizada</span></h2>
+    <p style="margin-bottom:44px;max-width:600px;margin-left:auto;margin-right:auto">Monitorizamos las fuentes oficiales cada d&iacute;a para que nada se te escape.</p>
+    <div class="grid-4">
+      <div class="tech-card fi"><div class="tech-icon">&#127467;&#127480;</div><h3>BOE</h3><p>Bolet&iacute;n Oficial del Estado</p></div>
+      <div class="tech-card fi s1"><div class="tech-icon">&#127466;&#127482;</div><h3>DOUE</h3><p>Diario Oficial de la Uni&oacute;n Europea</p></div>
+      <div class="tech-card fi s2"><div class="tech-icon">&#127463;&#127476;</div><h3>Boletines auton&oacute;micos</h3><p>Todas las comunidades aut&oacute;nomas</p></div>
+      <div class="tech-card fi s3"><div class="tech-icon">&#128218;</div><h3>Normativa sectorial</h3><p>Regulaci&oacute;n espec&iacute;fica por industria</p></div>
+    </div>
+    <div class="stat-grid" style="margin-top:36px">
+      <div class="stat fi"><div class="stat-number">6+</div><div class="stat-label">Fuentes diarias</div></div>
+      <div class="stat fi s1"><div class="stat-number" style="color:var(--purple)">100%</div><div class="stat-label">Cobertura nacional</div></div>
+      <div class="stat fi s2"><div class="stat-number" style="color:var(--teal)">17</div><div class="stat-label">Todas las CCAA</div></div>
+      <div class="stat fi s3"><div class="stat-number">24h</div><div class="stat-label">Actualizaci&oacute;n diaria</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 8: CTA -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-8">
+  <div class="glow-orb" style="width:800px;height:800px;background:rgba(225,29,72,.08);top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+  <div class="slide-content cta-slide">
+    <div class="logo mb-20" style="font-size:2.2rem">Fenix <em>Advisor</em></div>
+    <div class="badge">Pr&oacute;ximamente</div>
+    <h1>S&eacute; de los primeros<br>en probar <span class="hl">Fenix Advisor</span></h1>
+    <p class="subtitle" style="margin:16px auto">Vigilancia normativa con IA. Res&uacute;menes claros.<br>Planes de acci&oacute;n. Sin jerga legal.</p>
+    <a href="https://advisor.fenixia.tech/#early" class="cta-button">Solicitar acceso anticipado &rarr;</a>
+    <div class="contact-info">
+      <p style="color:var(--white);font-weight:700;margin-bottom:6px">FENIXIA SOLUTIONS S.L.</p>
+      <p><a href="mailto:contacto@fenixia.tech">contacto@fenixia.tech</a> &mdash; advisor.fenixia.tech</p>
+      <p style="margin-top:4px">C/ La Paz 83, 03320 Elx/Elche (Alicante)</p>
+    </div>
+  </div>
+</section>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+const nav=document.getElementById('nav');
+const counter=document.getElementById('slideCounter');
+const total=slides.length;
+
+// Create nav dots
+slides.forEach((_,i)=>{
+  const dot=document.createElement('div');
+  dot.className='nav-dot'+(i===0?' active':'');
+  dot.addEventListener('click',()=>slides[i].scrollIntoView({behavior:'smooth'}));
+  nav.appendChild(dot);
+});
+
+// Slide observer
+const slideObs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const idx=Array.from(slides).indexOf(entry.target);
+      document.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+      counter.textContent=`${idx+1} / ${total}`;
+    }
+  });
+},{threshold:.5});
+slides.forEach(slide=>slideObs.observe(slide));
+
+// Reveal animations
+const revealObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');revealObs.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(e=>revealObs.observe(e));
+
+// Keyboard navigation
+document.addEventListener('keydown',e=>{
+  const dots=document.querySelectorAll('.nav-dot');
+  let current=Array.from(dots).findIndex(d=>d.classList.contains('active'));
+  if(e.key==='ArrowDown'||e.key==='PageDown'){
+    e.preventDefault();
+    if(current<total-1)slides[current+1].scrollIntoView({behavior:'smooth'});
+  }else if(e.key==='ArrowUp'||e.key==='PageUp'){
+    e.preventDefault();
+    if(current>0)slides[current-1].scrollIntoView({behavior:'smooth'});
+  }
+});
+</script>
+</body>
+</html>
