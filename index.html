@@ -421,14 +421,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
       <p class="sdesc">S&eacute; de los primeros en probar Fenix Advisor. Sin compromiso, sin coste. Te avisamos cuando est&eacute; listo.</p>
     </div>
     <div class="cta-box">
-      <form class="cta-form" id="contactForm" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('successMsg').style.display='block'">
+      <form class="cta-form" id="contactForm" onsubmit="submitLead(event)">
         <div class="form-row">
-          <input type="text" placeholder="Tu nombre" required>
-          <input type="email" placeholder="tu@empresa.com" required>
+          <input type="text" name="name" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="tu@empresa.com" required>
         </div>
         <div class="form-row">
-          <input type="text" placeholder="Nombre de tu empresa">
-          <input type="text" placeholder="Sector (ej: construcci&oacute;n, hosteler&iacute;a...)">
+          <input type="text" name="company" placeholder="Nombre de tu empresa">
+          <input type="text" name="sector" placeholder="Sector (ej: construcci&oacute;n, hosteler&iacute;a...)">
         </div>
         <button type="submit" class="btn btn-primary cta-submit">Quiero acceso anticipado &rarr;</button>
         <p class="cta-hint">Sin spam. Solo te avisaremos cuando Fenix Advisor est&eacute; disponible.</p>
@@ -523,6 +523,20 @@ function toggleTheme(){
     });
   }
 })();
+
+function submitLead(e){
+  e.preventDefault();
+  var f=e.target;var btn=f.querySelector('button[type="submit"]');
+  btn.disabled=true;btn.textContent='Enviando...';
+  fetch('https://app.advisor.fenixia.tech/api/contact',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:f.name.value,email:f.email.value,company:f.company.value,source:'advisor'})
+  }).then(function(){
+    f.style.display='none';document.getElementById('successMsg').style.display='block';
+  }).catch(function(){
+    f.style.display='none';document.getElementById('successMsg').style.display='block';
+  });
+}
 </script>
 </body>
 </html>
