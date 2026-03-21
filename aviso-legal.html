@@ -30,9 +30,19 @@ strong{font-weight:600;color:#111827}
 .ib{background:#ecfeff;border-left:3px solid #06b6d4;padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem}
 .ib p{margin-bottom:.25rem}
 .ib p:last-child{margin-bottom:0}
-footer{border-top:1px solid #e5e7eb;padding:2rem;text-align:center}
-footer p{font-size:.875rem;color:#9ca3af}
-footer a{color:#06b6d4;text-decoration:none;font-weight:500}
+footer{background:#0b1220;border-top:1px solid #1e293b;padding:3rem 2rem 1.5rem;color:#94a3b8}
+.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
+.ft-brand-name{font-weight:900;font-size:1.1rem;color:#fff;margin-bottom:.5rem}
+.ft-brand-name span{color:#06b6d4}
+.ft-brand-desc{font-size:.78rem;color:#94a3b8;line-height:1.6}
+.ft-col h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#fff;margin-bottom:.8rem}
+.ft-col a{display:block;color:#94a3b8;font-size:.82rem;padding:.25rem 0;transition:.2s;text-decoration:none}
+.ft-col a:hover{color:#06b6d4}
+.ft-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.ft-copy{color:#64748b;font-size:.72rem}
+.ft-linkedin{color:#64748b;transition:.2s}
+.ft-linkedin:hover{color:#06b6d4}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr;text-align:center}.ft-bottom{flex-direction:column;text-align:center}}
 @media(max-width:600px){header{padding:1rem 1.25rem}.hdr{flex-direction:column;align-items:flex-start}main{padding:2rem 1.25rem 3rem}h1{font-size:1.6rem}}
 </style>
 </head>
@@ -89,6 +99,12 @@ footer a{color:#06b6d4;text-decoration:none;font-weight:500}
 <p>Email: <a href="mailto:contacto@fenixia.tech">contacto@fenixia.tech</a></p>
 </div>
 </main>
-<footer><p style="margin-bottom:.75rem"><a href="https://advisor.fenixia.tech">Volver a Fenix Advisor</a></p><p>&copy; 2026 FENIXIA SOLUTIONS S.L. Todos los derechos reservados.</p></footer>
+<footer>
+<div class="ft-inner"><div><div class="ft-brand-name">FENIX <span>IA</span> Solutions</div><p class="ft-brand-desc">Inteligencia artificial que trabaja para tu empresa.</p></div>
+<div class="ft-col"><h4>Productos</h4><a href="https://360.fenixia.tech">Fenix 360</a><a href="https://hr.fenixia.tech">Fenix HR</a><a href="https://prospector.fenixia.tech">Fenix Prospector</a><a href="https://guardian.fenixia.tech">Fenix Guardian</a><a href="https://portfolio.fenixia.tech">Fenix Portfolio</a><a href="https://advisor.fenixia.tech">Fenix Advisor</a></div>
+<div class="ft-col"><h4>Legal</h4><a href="https://fenixia.tech/aviso-legal/" target="_blank" rel="noopener">Aviso legal</a><a href="https://fenixia.tech/privacidad/" target="_blank" rel="noopener">Privacidad</a><a href="https://fenixia.tech/cookies/" target="_blank" rel="noopener">Cookies</a><a href="https://fenixia.tech/terminos/" target="_blank" rel="noopener">T&eacute;rminos</a></div>
+<div class="ft-col"><h4>Contacto</h4><a href="mailto:contacto@fenixia.tech">contacto@fenixia.tech</a><span style="display:block;font-size:.82rem;padding:.25rem 0">C/ La Paz 83</span><span style="display:block;font-size:.82rem;padding:.25rem 0">03320 Elx (Alicante)</span></div></div>
+<div class="ft-bottom"><span class="ft-copy">&copy; 2026 FENIXIA SOLUTIONS S.L. &middot; Todos los derechos reservados &middot; CIF B22739668</span><a href="https://www.linkedin.com/company/fenix-ia-solutions" target="_blank" rel="noopener" class="ft-linkedin" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+</footer>
 </body>
 </html>
