@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fenix Advisor &mdash; Tu asesor regulatorio con IA &middot; Pr&oacute;ximamente</title>
+<title>Fenix Advisor &mdash; Asesor laboral y empresarial con IA | Convenios colectivos</title>
 
 <!-- SEO -->
-<meta name="description" content="Fenix Advisor vigila los cambios regulatorios que afectan a tu negocio, los resume con IA y te dice qu&eacute; hacer. Alertas autom&aacute;ticas, planes de acci&oacute;n y calendario de cumplimiento. Pr&oacute;ximamente.">
-<meta name="keywords" content="asesor regulatorio IA, cumplimiento normativo, vigilancia BOE, alertas regulatorias, compliance autom&aacute;tico, normativa empresas">
+<meta name="description" content="Resuelve consultas laborales, fiscales y mercantiles en 10 segundos con IA. Cruza automaticamente el Estatuto de los Trabajadores y el convenio colectivo de tu sector. Desde 19 EUR/mes.">
+<meta name="keywords" content="asesor laboral IA, convenios colectivos, consultas laborales, estatuto trabajadores, asesoria empresarial IA, compliance laboral, CNAE convenio, asesoria fiscal IA, asesor mercantil, normativa laboral espana">
 <meta name="author" content="FENIXIA SOLUTIONS S.L.">
 <meta name="robots" content="index, follow">
 <meta name="language" content="Spanish">
-<meta name="theme-color" content="#0d9488">
+<meta name="theme-color" content="#e11d48">
 <link rel="canonical" href="https://advisor.fenixia.tech/">
 <link rel="icon" href="favicon.ico" sizes="any">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://advisor.fenixia.tech/">
-<meta property="og:title" content="Fenix Advisor &mdash; Tu asesor regulatorio con IA">
-<meta property="og:description" content="Cambios regulatorios que afectan a tu negocio, resumidos con IA y con plan de acci&oacute;n. Pr&oacute;ximamente.">
+<meta property="og:title" content="Fenix Advisor &mdash; Asesor laboral y empresarial con IA | Convenios colectivos">
+<meta property="og:description" content="Resuelve consultas laborales, fiscales y mercantiles en 10 segundos con IA. Cruza automaticamente el Estatuto de los Trabajadores y el convenio colectivo de tu sector. Desde 19 EUR/mes.">
 <meta property="og:site_name" content="Fenix Advisor">
 <meta property="og:locale" content="es_ES">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fenix Advisor &mdash; Tu asesor regulatorio con IA">
-<meta name="twitter:description" content="Vigilancia regulatoria con IA. Pr&oacute;ximamente.">
+<meta name="twitter:title" content="Fenix Advisor &mdash; Asesor laboral y empresarial con IA | Convenios colectivos">
+<meta name="twitter:description" content="Resuelve consultas laborales, fiscales y mercantiles en 10 segundos con IA. Cruza automaticamente el Estatuto de los Trabajadores y el convenio colectivo de tu sector. Desde 19 EUR/mes.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +59,7 @@ html.light{
 html.light nav{background:rgba(250,250,248,.88)!important}
 html.light nav.scrolled{background:rgba(250,250,248,.95)!important;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 html.light .orb{opacity:.08}
+html.light .screenshot-bar{background:var(--surface)}
 .theme-toggle{background:none;border:1.5px solid var(--border2);border-radius:8px;color:var(--text3);cursor:pointer;padding:.4rem;display:flex;align-items:center;justify-content:center;transition:all .3s}
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
 html{scroll-behavior:smooth;font-size:16px}
@@ -107,12 +108,14 @@ a:hover{color:var(--accent2)}
 @keyframes float-orb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-20px) scale(1.05)}}
 
 .hero-content{text-align:center;max-width:800px;position:relative;z-index:1}
-.coming{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;padding:.4rem 1rem;border-radius:100px;background:rgba(225,29,72,.07);border:1px solid rgba(225,29,72,.15);animation:tag-glow 3s ease-in-out infinite}
-@keyframes tag-glow{0%,100%{box-shadow:0 0 8px rgba(225,29,72,.08)}50%{box-shadow:0 0 25px rgba(225,29,72,.2)}}
 .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;line-height:1.08;color:var(--text);margin-bottom:1.4rem;letter-spacing:-.03em}
 .hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero .sub{font-size:1.1rem;color:var(--text2);line-height:1.75;margin-bottom:2.2rem;max-width:600px;margin-left:auto;margin-right:auto}
 .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .stat-num{font-size:1.8rem;font-weight:900;color:var(--text);line-height:1.2}
+.hero-stat .stat-label{font-size:.78rem;color:var(--text3);margin-top:.2rem}
 
 /* ── SECTIONS ── */
 section{padding:6rem 2rem}
@@ -126,6 +129,26 @@ section{padding:6rem 2rem}
 .center{text-align:center}
 .center .sdesc{margin:0 auto}
 .alt-bg{background:var(--bg2)}
+
+/* Screenshot mockup */
+.screenshot-wrapper{max-width:960px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4);border:1px solid var(--border)}
+.screenshot-bar{background:var(--bg3);padding:12px 16px;display:flex;align-items:center;gap:8px}
+.screenshot-bar span{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.1)}
+.screenshot-body{background:var(--bg2);padding:32px 40px;font-family:var(--mono);font-size:13px;color:var(--text3);line-height:2}
+.screenshot-body .hl-blue{color:#60a5fa}
+.screenshot-body .hl-amber{color:#fbbf24}
+.screenshot-body .hl-green{color:#4ade80}
+.screenshot-body .hl-white{color:var(--text)}
+.screenshot-body .hl-cyan{color:#22d3ee}
+.chat-header{font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.chat-msg{margin-bottom:1.2rem;padding:.8rem 1rem;border-radius:10px}
+.chat-msg.user{background:rgba(225,29,72,.06);border:1px solid rgba(225,29,72,.12)}
+.chat-msg.assistant{background:rgba(96,165,250,.04);border:1px solid rgba(96,165,250,.1)}
+.chat-role{font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.4rem}
+.chat-msg.user .chat-role{color:var(--accent)}
+.chat-msg.assistant .chat-role{color:#60a5fa}
+.chat-msg p{font-family:var(--font);font-size:.85rem;color:var(--text2);line-height:1.7;margin:0}
+.chat-msg .chat-ref{font-family:var(--mono);font-size:.75rem;color:var(--text3);margin-top:.6rem;padding-top:.5rem;border-top:1px solid var(--border)}
 
 /* Dolor cards */
 .dolor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
@@ -149,6 +172,22 @@ section{padding:6rem 2rem}
 .feat-name{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
 .feat-desc{font-size:.82rem;color:var(--text2);line-height:1.6}
 
+/* Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{background:var(--surface);border-radius:var(--radius);padding:2.5rem 2rem;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.price-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.price-card.featured{border-color:rgba(225,29,72,.3);box-shadow:0 0 40px rgba(225,29,72,.1)}
+.price-card.featured:hover{box-shadow:0 0 60px rgba(225,29,72,.15)}
+.price-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--accent);padding:.25rem .7rem;border-radius:100px;margin-bottom:1rem}
+.price-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.price-amount{font-size:2.5rem;font-weight:900;color:var(--text)}
+.price-period{font-size:.85rem;color:var(--text3)}
+.price-desc{font-size:.82rem;color:var(--text2);margin:1rem 0 1.5rem;line-height:1.6}
+.price-features{list-style:none;text-align:left;margin-bottom:1.5rem}
+.price-features li{padding:.4rem 0;font-size:.85rem;color:var(--text2);border-bottom:1px solid var(--border)}
+.price-features li:last-child{border-bottom:none}
+.pricing-note{color:var(--text3);font-size:.9rem;margin-top:2rem}
+
 /* Who cards */
 .who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
 .who-card{background:var(--surface);border-radius:var(--radius);padding:1.8rem 1.3rem;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
@@ -156,6 +195,15 @@ section{padding:6rem 2rem}
 .who-ico{font-size:2rem;margin-bottom:.6rem}
 .who-card h4{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
 .who-card p{font-size:.78rem;color:var(--text2);line-height:1.55}
+
+/* Cross-sell */
+.cross-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.cross-card{background:var(--surface);border-radius:var(--radius);padding:1.8rem 1.5rem;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.cross-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-3px);box-shadow:0 16px 50px rgba(0,0,0,.3)}
+.cross-card h4{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.cross-card p{font-size:.82rem;color:var(--text2);line-height:1.6;margin-bottom:1rem}
+.bundle-text{color:var(--text2);font-size:.9rem;margin-top:2rem;line-height:1.7}
+.bundle-text strong{color:var(--text)}
 
 /* CTA */
 .cta-section{position:relative;overflow:hidden;background:var(--bg2)}
@@ -201,16 +249,20 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
   .dolor-grid{grid-template-columns:1fr}
   .feat-grid{grid-template-columns:1fr}
   .who-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .cross-grid{grid-template-columns:1fr}
   .nav-links{display:none}
   .mobile-toggle{display:block}
   .form-row{flex-direction:column}
   .ft-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .screenshot-body{padding:20px;font-size:11px}
 }
 @media(max-width:600px){
   nav .nav-inner{padding:0 1.2rem}
   section{padding:4rem 1.2rem}
   .hero{padding:6rem 1.2rem 4rem;min-height:auto}
   .hero h1{font-size:1.8rem}
+  .hero-stats{gap:1.5rem}
   .who-grid{grid-template-columns:1fr}
   .btn{padding:.85rem 1.5rem;font-size:.88rem;min-height:44px}
   .hero-ctas{flex-direction:column;width:100%}
@@ -229,9 +281,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
   "name":"Fenix Advisor",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Web",
-  "description":"Asesor regulatorio con IA. Vigila cambios normativos, resume con lenguaje claro y genera planes de accion para tu empresa.",
+  "description":"Asesor laboral y empresarial con IA. Cruza el Estatuto de los Trabajadores con el convenio colectivo de tu sector y te da respuestas personalizadas en 10 segundos.",
   "provider":{"@type":"Organization","name":"FENIXIA SOLUTIONS S.L.","url":"https://advisor.fenixia.tech"},
-  "featureList":["Vigilancia regulatoria continua","Resumenes con IA","Alertas inteligentes por sector","Plan de accion automatico","Calendario de cumplimiento","Informes de compliance"]
+  "featureList":["Chat con IA laboral, fiscal y mercantil","Base de datos de +1000 convenios colectivos","Cruce automatico Estatuto + Convenio","Configuracion personalizada por empresa","Checklist de cumplimiento","Historial de consultas"],
+  "offers":[
+    {"@type":"Offer","name":"Starter","price":"19","priceCurrency":"EUR","description":"Para autonomos y microempresas. Consultas ilimitadas, 1 usuario, convenio aplicable."},
+    {"@type":"Offer","name":"Pyme","price":"39","priceCurrency":"EUR","description":"Para empresas de 4-20 empleados. Multi-usuario, checklist, calendario, historial completo."},
+    {"@type":"Offer","name":"Business","price":"79","priceCurrency":"EUR","description":"Para empresas de 20-100 empleados. Todas las areas, API, soporte prioritario."}
+  ]
 }
 </script>
 </head>
@@ -242,8 +299,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
   <div class="nav-inner">
     <div class="logo">FENIX <span>Advisor</span></div>
     <div class="nav-links">
-      <a href="#problema">El problema</a>
-      <a href="#solucion">Soluci&oacute;n</a>
+      <a href="#solucion">Funcionalidades</a>
+      <a href="#pricing">Pricing</a>
       <a href="#sectores">Sectores</a>
       <a href="presentacion.html" class="btn btn-outline">&#9654; Presentaci&oacute;n</a>
       <a href="https://app.advisor.fenixia.tech" class="btn btn-primary" target="_blank" rel="noopener">Acceder &rarr;</a>
@@ -258,8 +315,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
 
 <div class="mobile-overlay" onclick="toggleMenu()"></div>
 <div class="mobile-menu">
-  <a href="#problema" onclick="toggleMenu()">El problema</a>
-  <a href="#solucion" onclick="toggleMenu()">Soluci&oacute;n</a>
+  <a href="#solucion" onclick="toggleMenu()">Funcionalidades</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
   <a href="#sectores" onclick="toggleMenu()">Sectores</a>
   <a href="presentacion.html" class="btn btn-outline" onclick="toggleMenu()">&#9654; Presentaci&oacute;n</a>
   <a href="https://app.advisor.fenixia.tech" class="btn btn-primary" onclick="toggleMenu()" target="_blank" rel="noopener">Acceder &rarr;</a>
@@ -273,10 +330,47 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
     <div class="grid-lines"></div>
   </div>
   <div class="hero-content reveal">
-    <h1>Cambia la normativa.<br>Tu empresa se entera <span class="gradient">tarde</span></h1>
-    <p class="sub">Fenix Advisor vigila los cambios regulatorios que afectan a tu sector, los resume con IA y te dice exactamente qu&eacute; tienes que hacer. Antes de que sea un problema.</p>
+    <h1>Tu asesor laboral con IA.<br>Respuestas en <span class="gradient">10 segundos</span></h1>
+    <p class="sub">Fenix Advisor cruza el Estatuto de los Trabajadores con el convenio colectivo de tu sector y te da respuestas personalizadas. Sin esperar a tu gestor&iacute;a.</p>
     <div class="hero-ctas">
-      <a href="#contacto" class="btn btn-primary">Solicitar Demo &rarr;</a>
+      <a href="https://app.advisor.fenixia.tech/register" class="btn btn-primary" target="_blank" rel="noopener">Empezar gratis &rarr;</a>
+      <a href="#solucion" class="btn btn-outline">Ver funcionalidades</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">Convenios colectivos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">8 &aacute;reas</div>
+        <div class="stat-label">Laboral, fiscal, mercantil...</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">&lt;2 c&eacute;nt</div>
+        <div class="stat-label">Por consulta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP SCREENSHOTS -->
+<section>
+  <div class="container center">
+    <div class="section-header">
+      <span class="tag">La app</span>
+      <h2 class="stitle">As&iacute; funciona <span class="hl">por dentro</span></h2>
+    </div>
+    <div class="screenshot-wrapper reveal" style="margin-bottom:2rem">
+      <div class="screenshot-bar">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="screenshots/chat.png" alt="Fenix Advisor - Chat con IA" style="width:100%;display:block" loading="lazy">
+    </div>
+    <div class="screenshot-wrapper reveal" style="margin-bottom:0">
+      <div class="screenshot-bar">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="screenshots/convenios.png" alt="Fenix Advisor - Convenios Colectivos" style="width:100%;display:block" loading="lazy">
     </div>
   </div>
 </section>
@@ -286,101 +380,162 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
   <div class="container center">
     <div class="section-header">
       <span class="tag">El problema</span>
-      <h2 class="stitle">Cada d&iacute;a se publican cambios que afectan a tu negocio.<br>&iquest;Los est&aacute;s <span class="hl">leyendo</span>?</h2>
-      <p class="sdesc">BOE, DOUE, boletines auton&oacute;micos, normativa sectorial... Es imposible estar al d&iacute;a manualmente.</p>
+      <h2 class="stitle">La normativa laboral es compleja.<br>&iquest;Sabes qu&eacute; dice tu <span class="hl">convenio</span>?</h2>
+      <p class="sdesc">Consultas sin respuesta, convenios desconocidos y sanciones evitables. As&iacute; funciona hoy la gesti&oacute;n laboral en la mayor&iacute;a de pymes.</p>
     </div>
     <div class="dolor-grid">
       <div class="dolor-card reveal">
         <div class="dolor-card-accent"></div>
         <div class="dolor-ico">&#9888;&#65039;</div>
-        <h4>Multas por incumplimiento</h4>
-        <p>No te enteraste del cambio normativo. La inspecci&oacute;n llega antes que la informaci&oacute;n. El coste medio de una sanci&oacute;n supera los 30.000&euro;.</p>
+        <h4>Esperando a tu gestor&iacute;a</h4>
+        <p>Env&iacute;as un email, esperas 24-48 horas. Mientras tanto, no sabes si puedes despedir, cu&aacute;ntos d&iacute;as de vacaciones corresponden o qu&eacute; dice tu convenio.</p>
       </div>
       <div class="dolor-card reveal reveal-d1">
         <div class="dolor-card-accent"></div>
         <div class="dolor-ico">&#128240;</div>
-        <h4>Sobrecarga informativa</h4>
-        <p>Miles de p&aacute;ginas de BOE, DOUE y boletines auton&oacute;micos cada semana. Tu equipo legal no puede leerlo todo. Y cuando puede, llega tarde.</p>
+        <h4>Convenio desconocido</h4>
+        <p>El 70% de las pymes no sabe qu&eacute; convenio colectivo les aplica ni qu&eacute; mejoras establece sobre el Estatuto de los Trabajadores.</p>
       </div>
       <div class="dolor-card reveal reveal-d2">
         <div class="dolor-card-accent"></div>
         <div class="dolor-ico">&#128337;</div>
-        <h4>Reacci&oacute;n en vez de prevenci&oacute;n</h4>
-        <p>Te enteras de los cambios cuando ya est&aacute;n en vigor. Adaptar procesos con prisa cuesta 10x m&aacute;s que hacerlo con tiempo.</p>
+        <h4>Multas evitables</h4>
+        <p>Incumplir la normativa laboral cuesta entre 750 y 225.000 EUR. La mayor&iacute;a de sanciones son por desconocimiento, no por mala fe.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUCIÓN -->
+<!-- SOLUCION -->
 <section id="solucion">
   <div class="container center">
     <div class="section-header">
-      <span class="tag">La soluci&oacute;n</span>
-      <h2 class="stitle">Tu asesor regulatorio con IA.<br>Siempre despierto, siempre <span class="hl">al d&iacute;a</span></h2>
-      <p class="sdesc">Fenix Advisor monitoriza, analiza y te recomienda acci&oacute;n. T&uacute; solo decides.</p>
+      <span class="tag">Funcionalidades</span>
+      <h2 class="stitle">Tu asesor laboral con IA.<br>Siempre disponible, siempre <span class="hl">actualizado</span></h2>
+      <p class="sdesc">Fenix Advisor responde tus consultas cruzando legislaci&oacute;n y convenio. T&uacute; solo preguntas.</p>
     </div>
     <div class="feat-grid">
       <div class="feat-card reveal">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg width="22" height="22" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div>
-          <div class="feat-name">Vigilancia continua</div>
-          <div class="feat-desc">Monitoriza BOE, DOUE, boletines auton&oacute;micos y normativa sectorial en tiempo real. Configura tus fuentes y sectores de inter&eacute;s.</div>
+          <div class="feat-name">Chat con IA</div>
+          <div class="feat-desc">Pregunta lo que quieras sobre laboral, fiscal, mercantil o contable. Respuesta fundamentada con art&iacute;culos de ley y referencias al BOE.</div>
         </div>
       </div>
       <div class="feat-card reveal reveal-d1">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <svg width="22" height="22" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
         <div>
-          <div class="feat-name">Res&uacute;menes con IA</div>
-          <div class="feat-desc">Cada cambio normativo resumido en lenguaje claro: qu&eacute; cambia, a qui&eacute;n afecta, desde cu&aacute;ndo y qu&eacute; hacer. Sin jerga legal.</div>
+          <div class="feat-name">Convenios colectivos</div>
+          <div class="feat-desc">Base de datos de +1000 convenios nacionales, actualizada diariamente desde el BOE. Clasificados por CNAE e IAE.</div>
         </div>
       </div>
       <div class="feat-card reveal reveal-d2">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <svg width="22" height="22" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
         <div>
-          <div class="feat-name">Alertas inteligentes</div>
-          <div class="feat-desc">Solo te avisa cuando algo te afecta. Filtrado por sector, comunidad aut&oacute;noma, tipo de empresa y &aacute;rea funcional. Cero ruido.</div>
+          <div class="feat-name">Estatuto + Convenio</div>
+          <div class="feat-desc">La IA cruza autom&aacute;ticamente el Estatuto de los Trabajadores (marco base) con el convenio de tu sector para darte la respuesta m&aacute;s precisa.</div>
         </div>
       </div>
       <div class="feat-card reveal reveal-d3">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <svg width="22" height="22" fill="none" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div>
-          <div class="feat-name">Plan de acci&oacute;n</div>
-          <div class="feat-desc">No solo te dice qu&eacute; ha cambiado. Te dice qu&eacute; pasos seguir para cumplir. Con plazos, responsables y checklist.</div>
+          <div class="feat-name">Personalizado</div>
+          <div class="feat-desc">Configura tu empresa (CNAE, empleados, provincia) y cada respuesta se adapta a tu caso concreto.</div>
         </div>
       </div>
       <div class="feat-card reveal reveal-d4">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <svg width="22" height="22" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </div>
         <div>
-          <div class="feat-name">Calendario regulatorio</div>
-          <div class="feat-desc">Visualiza todos los plazos de cumplimiento en un calendario. Nunca m&aacute;s &ldquo;se nos pas&oacute; la fecha&rdquo;.</div>
+          <div class="feat-name">Checklist cumplimiento</div>
+          <div class="feat-desc">Calendario de obligaciones fiscales y laborales personalizado. Nunca m&aacute;s se te pasa un plazo.</div>
         </div>
       </div>
       <div class="feat-card reveal reveal-d5">
         <div class="feat-ico">
-          <svg width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <svg width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
         <div>
-          <div class="feat-name">Informe de cumplimiento</div>
-          <div class="feat-desc">Genera informes autom&aacute;ticos del estado de cumplimiento para direcci&oacute;n, auditor&iacute;a o la inspecci&oacute;n. Siempre preparado.</div>
+          <div class="feat-name">Historial de consultas</div>
+          <div class="feat-desc">Todas tus consultas guardadas y organizadas por &aacute;rea. Consulta respuestas anteriores sin volver a preguntar.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARA QUIÉN -->
-<section class="alt-bg" id="sectores">
+<!-- PRICING -->
+<section class="alt-bg" id="pricing">
+  <div class="container center">
+    <div class="section-header">
+      <span class="tag">Pricing</span>
+      <h2 class="stitle">Un plan para cada <span class="hl">empresa</span></h2>
+      <p class="sdesc">Desde aut&oacute;nomos hasta empresas de 100 empleados. Paga solo por lo que necesitas.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-name">Starter</div>
+        <div class="price-amount">19&euro;</div>
+        <div class="price-period">/mes</div>
+        <p class="price-desc">Para aut&oacute;nomos y microempresas. Consultas ilimitadas, 1 usuario, convenio aplicable.</p>
+        <ul class="price-features">
+          <li>Consultas ilimitadas</li>
+          <li>1 usuario</li>
+          <li>Convenio colectivo aplicable</li>
+          <li>Historial de consultas</li>
+          <li>Soporte por email</li>
+        </ul>
+        <a href="https://app.advisor.fenixia.tech/register" class="btn btn-outline" target="_blank" rel="noopener">Empezar gratis &rarr;</a>
+      </div>
+      <div class="price-card featured reveal reveal-d1">
+        <div class="price-badge">Recomendado</div>
+        <div class="price-name">Pyme</div>
+        <div class="price-amount">39&euro;</div>
+        <div class="price-period">/mes</div>
+        <p class="price-desc">Para empresas de 4-20 empleados. Multi-usuario, checklist, calendario, historial completo.</p>
+        <ul class="price-features">
+          <li>Consultas ilimitadas</li>
+          <li>Hasta 5 usuarios</li>
+          <li>Todos los convenios</li>
+          <li>Checklist de cumplimiento</li>
+          <li>Calendario de obligaciones</li>
+          <li>Historial completo</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="https://app.advisor.fenixia.tech/register" class="btn btn-primary" target="_blank" rel="noopener">Empezar gratis &rarr;</a>
+      </div>
+      <div class="price-card reveal reveal-d2">
+        <div class="price-name">Business</div>
+        <div class="price-amount">79&euro;</div>
+        <div class="price-period">/mes</div>
+        <p class="price-desc">Para empresas de 20-100 empleados. Todas las &aacute;reas, API, soporte prioritario.</p>
+        <ul class="price-features">
+          <li>Consultas ilimitadas</li>
+          <li>Usuarios ilimitados</li>
+          <li>Todas las &aacute;reas (laboral, fiscal, mercantil, contable)</li>
+          <li>API de integraci&oacute;n</li>
+          <li>Checklist + calendario</li>
+          <li>Soporte prioritario</li>
+          <li>Onboarding personalizado</li>
+        </ul>
+        <a href="https://app.advisor.fenixia.tech/register" class="btn btn-outline" target="_blank" rel="noopener">Empezar gratis &rarr;</a>
+      </div>
+    </div>
+    <p class="pricing-note">Todos los planes incluyen 14 d&iacute;as de prueba gratuita. Sin tarjeta de cr&eacute;dito.</p>
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section id="sectores">
   <div class="container center">
     <div class="section-header">
       <span class="tag">Para qui&eacute;n</span>
@@ -389,25 +544,53 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
     <div class="who-grid">
       <div class="who-card reveal">
         <div class="who-ico">&#127970;</div>
-        <h4>PYMEs</h4>
-        <p>Sin departamento legal propio. Necesitas saber qu&eacute; te afecta sin leer 200 p&aacute;ginas de BOE.</p>
+        <h4>PYMEs sin gestor</h4>
+        <p>Resuelve el 80% de tus dudas laborales al instante sin depender de un asesor externo.</p>
       </div>
       <div class="who-card reveal reveal-d1">
         <div class="who-ico">&#128188;</div>
-        <h4>Asesor&iacute;as y despachos</h4>
-        <p>Gestionas el cumplimiento de decenas de clientes. Necesitas automatizar la vigilancia.</p>
+        <h4>Gestor&iacute;as y asesor&iacute;as</h4>
+        <p>Responde m&aacute;s r&aacute;pido a tus clientes. Usa Advisor como herramienta interna de consulta.</p>
       </div>
       <div class="who-card reveal reveal-d2">
         <div class="who-ico">&#127975;</div>
-        <h4>Industria y construcci&oacute;n</h4>
-        <p>Normativa t&eacute;cnica, medioambiental y laboral en constante cambio. Un error cuesta paradas y sanciones.</p>
+        <h4>Departamentos RRHH</h4>
+        <p>Consultas de convenio, vacaciones, permisos y obligaciones sin salir de tu herramienta.</p>
       </div>
       <div class="who-card reveal reveal-d3">
         <div class="who-ico">&#127973;</div>
-        <h4>Hosteler&iacute;a y comercio</h4>
-        <p>Licencias, sanidad, accesibilidad, protecci&oacute;n de datos... Regulaci&oacute;n cruzada que cambia por comunidad.</p>
+        <h4>Startups y tech</h4>
+        <p>Normativa laboral clara desde el d&iacute;a 1. Ideal si contratas por primera vez.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CROSS-SELL -->
+<section class="alt-bg">
+  <div class="container center">
+    <div class="section-header">
+      <span class="tag">Ecosistema Fenix IA</span>
+      <h2 class="stitle">Descubre m&aacute;s <span class="hl">productos</span></h2>
+    </div>
+    <div class="cross-grid">
+      <a href="https://prospector.fenixia.tech" class="cross-card reveal" target="_blank" rel="noopener" style="color:inherit">
+        <h4>Fenix Prospector</h4>
+        <p>Inteligencia comercial B2B. Busca empresas en el BORME, detecta oportunidades.</p>
+        <span class="btn btn-ghost">Descubrir &rarr;</span>
+      </a>
+      <a href="https://hr.fenixia.tech" class="cross-card reveal reveal-d1" target="_blank" rel="noopener" style="color:inherit">
+        <h4>Fenix HR</h4>
+        <p>RRHH completo para pymes. Fichajes, turnos, vacaciones, n&oacute;minas.</p>
+        <span class="btn btn-ghost">Descubrir &rarr;</span>
+      </a>
+      <a href="https://portfolio.fenixia.tech" class="cross-card reveal reveal-d2" target="_blank" rel="noopener" style="color:inherit">
+        <h4>Fenix Portfolio</h4>
+        <p>Gesti&oacute;n de inversiones. Dashboard unificado con an&aacute;lisis fiscal.</p>
+        <span class="btn btn-ghost">Descubrir &rarr;</span>
+      </a>
+    </div>
+    <p class="bundle-text">Contrata <strong>Advisor + HR por 69 EUR/mes</strong> (ahorro 22%) | <strong>Suite completa por 99 EUR/mes</strong> (ahorro 45%)</p>
   </div>
 </section>
 
@@ -415,8 +598,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
 <section class="cta-section" id="contacto">
   <div class="container center">
     <div class="section-header">
-      <h2 class="stitle">Contacta <span class="hl">con nosotros</span></h2>
-      <p class="sdesc">Cu&eacute;ntanos qu&eacute; necesitas y te mostraremos c&oacute;mo Fenix Advisor puede ayudarte.</p>
+      <h2 class="stitle">Empieza a consultar <span class="hl">hoy</span></h2>
+      <p class="sdesc">14 d&iacute;as gratis. Sin tarjeta. Sin compromiso.</p>
+    </div>
+    <div class="hero-ctas" style="margin-bottom:3rem">
+      <a href="https://app.advisor.fenixia.tech/register" class="btn btn-primary" target="_blank" rel="noopener">Crear cuenta gratis &rarr;</a>
+      <a href="#contactForm" class="btn btn-outline">Solicitar demo</a>
     </div>
     <div class="cta-box">
       <form class="cta-form" id="contactForm" onsubmit="submitLead(event)">
