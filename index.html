@@ -174,7 +174,7 @@ section{padding:6rem 2rem}
 
 /* Pricing */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.price-card{background:var(--surface);border-radius:var(--radius);padding:2.5rem 2rem;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.price-card{background:var(--surface);border-radius:var(--radius);padding:2.5rem 2rem;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 2px 12px rgba(0,0,0,.2);display:flex;flex-direction:column}
 .price-card:hover{border-color:rgba(225,29,72,.2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .price-card.featured{border-color:rgba(225,29,72,.3);box-shadow:0 0 40px rgba(225,29,72,.1)}
 .price-card.featured:hover{box-shadow:0 0 60px rgba(225,29,72,.15)}
@@ -183,7 +183,7 @@ section{padding:6rem 2rem}
 .price-amount{font-size:2.5rem;font-weight:900;color:var(--text)}
 .price-period{font-size:.85rem;color:var(--text3)}
 .price-desc{font-size:.82rem;color:var(--text2);margin:1rem 0 1.5rem;line-height:1.6}
-.price-features{list-style:none;text-align:left;margin-bottom:1.5rem}
+.price-features{list-style:none;text-align:left;margin-bottom:1.5rem;flex:1}
 .price-features li{padding:.4rem 0;font-size:.85rem;color:var(--text2);border-bottom:1px solid var(--border)}
 .price-features li:last-child{border-bottom:none}
 .pricing-note{color:var(--text3);font-size:.9rem;margin-top:2rem}
@@ -346,8 +346,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
         <div class="stat-label">Laboral, fiscal, mercantil...</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-num">&lt;2 c&eacute;nt</div>
-        <div class="stat-label">Por consulta</div>
+        <div class="stat-num">10s</div>
+        <div class="stat-label">Tiempo de respuesta</div>
       </div>
     </div>
   </div>
@@ -527,7 +527,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
           <li>Soporte prioritario</li>
           <li>Onboarding personalizado</li>
         </ul>
-        <a href="https://app.advisor.fenixia.tech/register" class="btn btn-outline" target="_blank" rel="noopener">Empezar gratis &rarr;</a>
+        <a href="mailto:contacto@fenixia.tech" class="btn btn-outline">Contactar &rarr;</a>
       </div>
     </div>
   </div>
