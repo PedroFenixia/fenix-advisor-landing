@@ -172,13 +172,16 @@ p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
   .keyboard-hint{display:none}
   .role-card{flex-direction:column;text-align:center}
 }
+.pslide{transition:opacity .4s}
+#presNavAdvisor .pdot,#presNavProsp .pdot{padding:2px 8px;border-radius:5px;font-size:.6rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.06);color:var(--gray);border:1px solid var(--gray3);transition:all .25s}
+#presNavAdvisor .pdot.active{background:var(--red);color:#fff;border-color:var(--red)}
 </style>
 </head>
 <body>
 
 <!-- Navigation dots -->
 <nav class="nav" id="nav"></nav>
-<div class="slide-counter" id="slideCounter">1 / 8</div>
+<div class="slide-counter" id="slideCounter">1 / 9</div>
 <div class="keyboard-hint">Navega con <span class="key">&uarr;</span> <span class="key">&darr;</span> o scroll</div>
 
 <!-- ═══════════════════════════════ -->
@@ -255,9 +258,34 @@ p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
 </section>
 
 <!-- ═══════════════════════════════ -->
-<!-- SLIDE 5: PARA QUIEN -->
+<!-- SLIDE 5: LA APP -->
 <!-- ═══════════════════════════════ -->
 <section class="slide" id="slide-5">
+  <div class="slide-content text-center">
+    <span class="tag">La App</span>
+    <h2>Asi se ve <span class="hl">por dentro</span></h2>
+    <div style="max-width:900px;margin:24px auto 0;border-radius:14px;overflow:hidden;border:1px solid var(--gray3);box-shadow:0 24px 64px rgba(0,0,0,.4)">
+      <div style="background:var(--card);padding:10px 16px;display:flex;align-items:center;gap:8px">
+        <span style="width:10px;height:10px;border-radius:50%;background:#fb5f57;display:inline-block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#fbbf24;display:inline-block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#28c941;display:inline-block"></span>
+        <div id="presNavAdvisor" style="margin-left:auto;display:flex;gap:6px"></div>
+      </div>
+      <div id="presSlideAdvisor" style="position:relative;background:var(--bg2)">
+        <img src="screenshots/demo_01_chat.png" alt="Chat" class="pslide active" data-label="Chat" style="width:100%;display:block">
+        <img src="screenshots/demo_02_convenios.png" alt="Convenios" class="pslide" data-label="Convenios" style="width:100%;display:none">
+        <img src="screenshots/demo_04_calendario.png" alt="Calendario" class="pslide" data-label="Calendario" style="width:100%;display:none">
+        <img src="screenshots/demo_05_areas.png" alt="Areas" class="pslide" data-label="Areas" style="width:100%;display:none">
+        <img src="screenshots/demo_06_perfil.png" alt="Empresa" class="pslide" data-label="Empresa" style="width:100%;display:none">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!-- SLIDE 6: PARA QUIEN -->
+<!-- ═══════════════════════════════ -->
+<section class="slide" id="slide-6">
   <div class="slide-content">
     <span class="tag">Para Qui&eacute;n</span>
     <h2>Dise&ntilde;ado para quienes<br><span class="hl">necesitan respuestas, no esperas</span></h2>
@@ -272,9 +300,9 @@ p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
 </section>
 
 <!-- ═══════════════════════════════ -->
-<!-- SLIDE 6: PRICING -->
+<!-- SLIDE 7: PRICING -->
 <!-- ═══════════════════════════════ -->
-<section class="slide" id="slide-6">
+<section class="slide" id="slide-7">
   <div class="slide-content text-center">
     <span class="tag">Planes</span>
     <h2>Precio justo.<br><span class="hl">Sin sorpresas.</span></h2>
@@ -321,9 +349,9 @@ p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
 </section>
 
 <!-- ═══════════════════════════════ -->
-<!-- SLIDE 7: ECOSISTEMA -->
+<!-- SLIDE 8: ECOSISTEMA -->
 <!-- ═══════════════════════════════ -->
-<section class="slide" id="slide-7">
+<section class="slide" id="slide-8">
   <div class="slide-content text-center">
     <span class="tag">Ecosistema</span>
     <h2>Fenix Advisor se integra con<br><span class="hl">el ecosistema Fenix IA</span></h2>
@@ -344,9 +372,9 @@ p{font-size:1.05rem;line-height:1.7;color:var(--gray)}
 </section>
 
 <!-- ═══════════════════════════════ -->
-<!-- SLIDE 8: CTA -->
+<!-- SLIDE 9: CTA -->
 <!-- ═══════════════════════════════ -->
-<section class="slide" id="slide-8">
+<section class="slide" id="slide-9">
   <div class="glow-orb" style="width:800px;height:800px;background:rgba(225,29,72,.08);top:50%;left:50%;transform:translate(-50%,-50%)"></div>
   <div class="slide-content cta-slide">
     <div class="logo mb-20" style="font-size:2.2rem">Fenix <em>Advisor</em></div>
@@ -403,6 +431,31 @@ document.addEventListener('keydown',e=>{
     if(current>0)slides[current-1].scrollIntoView({behavior:'smooth'});
   }
 });
+
+// Presentation slideshow
+function initPresSlideshow(cid, nid, color) {
+  var c = document.getElementById(cid);
+  var n = document.getElementById(nid);
+  if (!c || !n) return;
+  var s = c.querySelectorAll('.pslide');
+  var cur = 0;
+  s.forEach(function(sl, i) {
+    var d = document.createElement('span');
+    d.className = 'pdot' + (i === 0 ? ' active' : '');
+    d.textContent = sl.getAttribute('data-label') || (i + 1);
+    d.addEventListener('click', function() { goTo(i); });
+    n.appendChild(d);
+  });
+  function goTo(idx) {
+    s[cur].style.display = 'none';
+    n.children[cur].classList.remove('active');
+    cur = idx;
+    s[cur].style.display = 'block';
+    n.children[cur].classList.add('active');
+  }
+  setInterval(function() { goTo((cur + 1) % s.length); }, 4000);
+}
+initPresSlideshow('presSlideAdvisor', 'presNavAdvisor');
 </script>
 </body>
 </html>
