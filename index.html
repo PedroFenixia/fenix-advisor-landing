@@ -130,10 +130,16 @@ section{padding:6rem 2rem}
 .center .sdesc{margin:0 auto}
 .alt-bg{background:var(--bg2)}
 
-/* Screenshot mockup */
+/* Screenshot / Slideshow */
 .screenshot-wrapper{max-width:960px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4);border:1px solid var(--border)}
 .screenshot-bar{background:var(--bg3);padding:12px 16px;display:flex;align-items:center;gap:8px}
 .screenshot-bar span{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.1)}
+.slideshow{position:relative;background:var(--bg2);min-height:200px}
+.slideshow .slide{width:100%;display:none;transition:opacity .5s}
+.slideshow .slide.active{display:block}
+.slideshow-nav{margin-left:auto;display:flex;gap:6px}
+.slideshow-nav .dot{padding:3px 10px;border-radius:6px;font-size:.65rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.06);color:var(--text3);border:1px solid var(--border);transition:all .25s}
+.slideshow-nav .dot.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 .screenshot-body{background:var(--bg2);padding:32px 40px;font-family:var(--mono);font-size:13px;color:var(--text3);line-height:2}
 .screenshot-body .hl-blue{color:#60a5fa}
 .screenshot-body .hl-amber{color:#fbbf24}
@@ -353,24 +359,25 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem
   </div>
 </section>
 
-<!-- APP SCREENSHOTS -->
+<!-- APP DEMO SLIDESHOW -->
 <section>
   <div class="container center">
     <div class="section-header">
       <span class="tag">La app</span>
       <h2 class="stitle">As&iacute; funciona <span class="hl">por dentro</span></h2>
     </div>
-    <div class="screenshot-wrapper reveal" style="margin-bottom:2rem">
+    <div class="screenshot-wrapper reveal">
       <div class="screenshot-bar">
         <span></span><span></span><span></span>
+        <div class="slideshow-nav" id="advisorNav"></div>
       </div>
-      <img src="screenshots/chat.png" alt="Fenix Advisor - Chat con IA" style="width:100%;display:block" loading="lazy">
-    </div>
-    <div class="screenshot-wrapper reveal" style="margin-bottom:0">
-      <div class="screenshot-bar">
-        <span></span><span></span><span></span>
+      <div class="slideshow" id="advisorSlideshow">
+        <img src="screenshots/demo_01_chat.png" alt="Chat con IA" class="slide active" data-label="Chat">
+        <img src="screenshots/demo_02_convenios.png" alt="Convenios Colectivos" class="slide" data-label="Convenios">
+        <img src="screenshots/demo_04_calendario.png" alt="Calendario" class="slide" data-label="Calendario">
+        <img src="screenshots/demo_05_areas.png" alt="Areas" class="slide" data-label="Areas">
+        <img src="screenshots/demo_06_perfil.png" alt="Perfil empresa" class="slide" data-label="Empresa">
       </div>
-      <img src="screenshots/convenios.png" alt="Fenix Advisor - Convenios Colectivos" style="width:100%;display:block" loading="lazy">
     </div>
   </div>
 </section>
@@ -707,6 +714,31 @@ function toggleTheme(){
     });
   }
 })();
+
+// Slideshow
+function initSlideshow(containerId, navId) {
+  var container = document.getElementById(containerId);
+  var nav = document.getElementById(navId);
+  if (!container || !nav) return;
+  var slides = container.querySelectorAll('.slide');
+  var current = 0;
+  slides.forEach(function(s, i) {
+    var dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.textContent = s.getAttribute('data-label') || (i + 1);
+    dot.addEventListener('click', function() { goTo(i); });
+    nav.appendChild(dot);
+  });
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    nav.children[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    nav.children[current].classList.add('active');
+  }
+  setInterval(function() { goTo((current + 1) % slides.length); }, 4000);
+}
+initSlideshow('advisorSlideshow', 'advisorNav');
 
 function submitLead(e){
   e.preventDefault();
